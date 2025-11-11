@@ -1,8 +1,5 @@
 from flask import Flask, render_template, send_file
 import os
-import threading
-import webbrowser
-import time
 
 app = Flask(__name__)
 
@@ -12,30 +9,21 @@ def index():
 
 @app.route('/download')
 def download():
-    # TU WSTAW ŚCIEŻKĘ DO SWOJEGO PLIKU Z MODEM
-    file_path = "linematica_mod.rar"
-    try:
-        return send_file(file_path, as_attachment=True)
-    except Exception as e:
-        return f"Błąd podczas pobierania: {str(e)}"
+    file_path = "linematica_mod.zip"
+    if os.path.exists(file_path):
+        return send_file(file_path, as_attachment=True, download_name="Linematica_Mod.rar")
+    else:
+        return """
+        <html>
+            <body style="background: black; color: white; text-align: center; padding: 50px; font-family: Arial;">
+                <h1>📦 Linematica Mod</h1>
+                <p>Plik z modem będzie dostępny wkrótce!</p>
+                <a href="/" style="color: #4CAF50;">← Powrót do strony głównej</a>
+            </body>
+        </html>
+        """
 
-def open_browser():
-    time.sleep(2)
-    webbrowser.open_new('http://localhost:5000')
-
+# Ważne dla Render.com - użyj portu z zmiennej środowiskowej
 if __name__ == '__main__':
-    print("🦹‍♂️ Serwer Linematica uruchamia się...")
-    print("🌐 Strona będzie dostępna pod: http://localhost:5000")
-    print("🛑 Aby zatrzymać serwer, naciśnij Ctrl+C")
-    
-    # Uruchom przeglądarkę automatycznie
-    threading.Thread(target=open_browser).start()
-    
-    # Uruchom serwer z lepszymi ustawieniami
-    app.run(
-        debug=True, 
-        host='127.0.0.1', 
-        port=5000, 
-        use_reloader=False,
-        threaded=True
-    )
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
