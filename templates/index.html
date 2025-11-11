@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linematica All Version Java - Official Build Mod</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/static/mc.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #4CAF50;
+            text-shadow: 0 0 20px rgba(76, 175, 80, 0.7);
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #BB86FC;
+            margin-bottom: 30px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .features {
+            background: rgba(30, 30, 30, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #4CAF50;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .features h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 4px solid #4CAF50;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        .feature-item:hover {
+            background: rgba(76, 175, 80, 0.2);
+            transform: translateX(5px);
+            transition: all 0.3s ease;
+        }
+
+        .download-section {
+            background: rgba(30, 30, 30, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #BB86FC;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .download-section h2 {
+            color: #BB86FC;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .version-info {
+            background: rgba(187, 134, 252, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #BB86FC;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #BB86FC, #9C27B0);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(187, 134, 252, 0.4);
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(187, 134, 252, 0.6);
+            background: linear-gradient(45deg, #9C27B0, #BB86FC);
+        }
+
+        .compatibility {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .compatibility h3 {
+            color: #FF9800;
+            margin-bottom: 15px;
+        }
+
+        .versions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .version-tag {
+            background: rgba(255, 152, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #FF9800;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">LINEMATICA</div>
+            <div class="subtitle">Advanced Building Mod for Minecraft Java Edition</div>
+        </div>
+
+        <div class="main-content">
+            <div class="features">
+                <h2>🚀 Funkcje Moda</h2>
+                <ul class="feature-list">
+                    <li class="feature-item">🎯 Zaawansowane narzędzia budowlane</li>
+                    <li class="feature-item">📐 Precyzyjne linie i kształty</li>
+                    <li class="feature-item">🏗️ Automatyzacja konstrukcji</li>
+                    <li class="feature-item">📊 Planowanie i blueprinty</li>
+                    <li class="feature-item">🎨 Creative building tools</li>
+                    <li class="feature-item">⚡ Szybkie wypełnianie obszarów</li>
+                    <li class="feature-item">🔄 Kopiowanie i wklejanie struktur</li>
+                    <li class="feature-item">🌋 Zaawansowane generatory terenu</li>
+                </ul>
+            </div>
+
+            <div class="download-section">
+                <h2>📥 Pobierz Teraz!</h2>
+                <div class="version-info">
+                    <strong>Wersja: 2.4.1</strong><br>
+                    Ostatnia aktualizacja: Grudzień 2024
+                </div>
+                
+                <a href="/download" class="download-btn">
+                    🎮 POBERZ LINEMATICA MOD
+                </a>
+
+                <div class="compatibility">
+                    <h3>🔄 Kompatybilne wersje:</h3>
+                    <div class="versions">
+                        <span class="version-tag">1.20.x</span>
+                        <span class="version-tag">1.19.x</span>
+                        <span class="version-tag">1.18.x</span>
+                        <span class="version-tag">1.17.x</span>
+                        <span class="version-tag">1.16.x</span>
+                        <span class="version-tag">Forge</span>
+                        <span class="version-tag">Fabric</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2024 Linematica Mod | Minecraft Java Edition | Wszystkie prawa zastrzeżone
+        </div>
+    </div>
+</body>
+</html>
